@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+
+<body>
+
+
+    <% dishes.forEach(element=> { %>
+        <div>
+            <h2>
+                <%= element.title %>
+            </h2>
+            <img src="<%= element.image %>" alt="">
+            <form action="/details" method="POST">
+                <!-- <input type="hidden" name="title" value="<%= element.title %>">
+                <input type="hidden" name="image" value="<%= element.image %>"> -->
+                <input type="hidden" name="Resid" value="<%=element.id%>">
+                <button type="submit"> Show Recipe </button>
+            </form>
+        </div>
+        <% }) %>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+
+<body>
+
+    <h1>select the proper category</h1>
+
+    <select id="mainselect">
+        <option value="default">Select the type of search</option>
+        <option value="searchbyingredient"> Search by ingredient</option>
+        <option value="randomsearch"> Feeling Lucky! </option>
+        <option value="caloriessearch"> Search by calories </option>
+        <option value="cuisine"> Search by cuisine </option>
+    </select>
+
+    <div class="searchbyingredient hideforms">
+        <form action="/searchbyingredient" method="POST">
+            <input type="text" name="ingredients" placeholder="Enter the Ingredients">
+            <button type="submit"> Search </button>
+        </form>
+    </div>
+    <div class="randomsearch hideforms">
+        <form action="/randomsearch" method="POST">
+            <button type="submit"> Search </button>
+        </form>
+    </div>
+
+    <div class="caloriessearch hideforms">
+        <form action="/calories" method="POST">
+        <input type="number" name="min" placeholder="min calories">
+        <input type="number" name="max" id="max calories">
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+    <div class="cuisine hideforms">
+        <form action="/cuisine" method="POST">
+        <select name="cuisine">
+            <option value="African">African</option>
+            <option value="American">American</option>
+            <option value="British">British</option>
+            <option value="Cajun">Cajun</option>
+            <option value="Caribbean">Caribbean</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Eastern European">Eastern European</option>
+            <option value="European">European</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Greek">Greek</option>
+            <option value="Indian">Indian</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Korean">Korean</option>
+            <option value="Latin American">Latin American</option>
+            <option value="Mediterranean">Mediterranean</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Middle Eastern">Middle Eastern</option>
+            <option value="Nordic">Nordic</option>
+            <option value="Southern">Southern</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Thai">Thai</option>
+            <option value="Vietnamese">Vietnamese</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+    
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
