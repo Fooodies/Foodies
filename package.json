@@ -17,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/Fooodies/Foodies/issues"
   },
-  "homepage": "https://github.com/Fooodies/Foodies#readme"
+  "homepage": "https://github.com/Fooodies/Foodies#readme",
+  "dependencies": {
+    "dotenv": "^9.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "node": "^16.1.0",
+    "pg": "^8.6.0",
+    "superagent": "^6.1.0"
+  }
 }
