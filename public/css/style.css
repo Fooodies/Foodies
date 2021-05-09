@@ -40,16 +40,20 @@ body{
     font-family: 'Zilla Slab', serif;
     position: absolute;
     top:20%;
-    left: 20px;
+    left: 50px;
     width:100%;
     
+}
+#cot{
+    position: absolute;
+    left: 30%;
 }
 a{
     text-decoration: none;
     font-size: large;
     font-weight: bolder;
-    color: rgb(252, 193, 0);
-    text-shadow: 0 0 3px #685656, 0 0 5px #746668, 0 0 5px #fa0606;
+    color: rgb(212, 101, 10);
+    /* text-shadow: 0 0 3px #685656, 0 0 5px #746668, 0 0 5px #fa0606; */
 }
 #CoverButton{
     width: 350px;
@@ -76,8 +80,8 @@ a{
 
   #CoverButton {
     border: none;
-    background: rgb(247, 149, 3);
-      background: linear-gradient(0deg, rgb(209, 137, 3) 0%, rgb(209, 62, 17) 100%);
+    background: #ffc288;
+      /* background: linear-gradient(0deg, rgb(216, 43, 0) 0%, rgb(230, 94, 3) 100%); */
       color: #fff;
       overflow: hidden;
   }
