@@ -55,7 +55,7 @@ function homePage (req,res) {
 }
 
 function renderAboutUs (req,res) {
-    res.render('html/index.html')
+    res.render('aboutus')
 }
 
 // handle the searches page itself
