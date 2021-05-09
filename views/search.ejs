@@ -18,6 +18,10 @@
         <option value="randomsearch"> Feeling Lucky! </option>
         <option value="caloriessearch"> Search by calories </option>
         <option value="cuisine"> Search by cuisine </option>
+        <option value="diet"> Search by diet </option>
+        <option value="intolerances"> Search by intolerances </option>
+        <option value="type"> Search by type</option>
+        <option value="maxReadyTime"> preparation Time</option>
     </select>
 
     <div class="searchbyingredient hideforms">
@@ -72,11 +76,72 @@
         </form>
     </div>
     
+    <div class="diet hideforms">
+        <form action="/diet" method="POST">
+        <select name="diet">
+            <option value="Gluten Free">Gluten Free</option>
+            <option value="Ketogenic">Ketogenic</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+            <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Pescetarian">Pescetarian</option>
+            <option value="Paleo">Paleo</option>
+            <option value="Primal">Primal</option>
+            <option value="Whole30">Whole30</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
 
+    <div class="intolerances hideforms">
+        <form action="/intolerances" method="POST">
+        <select name="intolerances">
+            <option value="Dairy">Dairy</option>
+            <option value="Egg">Egg</option>
+            <option value="Gluten">Gluten</option>
+            <option value="Grain">Grain</option>
+            <option value="Peanut">Peanut</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Sesame">Sesame</option>
+            <option value="Shellfish">Shellfish</option>
+            <option value="Soy">Soy</option>
+            <option value="Sulfite">Sulfite</option>
+            <option value="Tree Nut">Tree Nut</option>
+            <option value="Wheat">Wheat</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
 
+    <div class="type hideforms">
+        <form action="/type" method="POST">
+        <select name="type">
+            <option value="main course">main course</option>
+            <option value="side dish">side dish</option>
+            <option value="dessert">dessert</option>
+            <option value="appetizer">appetizer</option>
+            <option value="salad">salad</option>
+            <option value="bread">bread</option>
+            <option value="breakfast">breakfast</option>
+            <option value="soup">soup</option>
+            <option value="beverage">beverage</option>
+            <option value="sauce">sauce</option>
+            <option value="marinade">marinade</option>
+            <option value="fingerfood">fingerfood</option>
+            <option value="snack">snack</option>
+            <option value="drink">drink</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
 
-
-
+    <div class="maxReadyTime hideforms">
+        <form action="/maxReadyTime" method="POST">
+            <input type="number" name="maxReadyTime" placeholder="preparation Time in min">
+            <button type="submit"> Search </button>
+        </form>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/app.js"></script>
