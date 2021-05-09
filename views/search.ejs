@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+
+<body>
+
+    <h1>select the proper category</h1>
+
+    <select id="mainselect">
+        <option value="default">Select the type of search</option>
+        <option value="searchbyingredient"> Search by ingredient</option>
+        <option value="randomsearch"> Feeling Lucky! </option>
+        <option value="caloriessearch"> Search by calories </option>
+        <option value="cuisine"> Search by cuisine </option>
+        <option value="diet"> Search by diet </option>
+        <option value="intolerances"> Search by intolerances </option>
+        <option value="type"> Search by type</option>
+        <option value="maxReadyTime"> preparation Time</option>
+    </select>
+
+    <div class="searchbyingredient hideforms">
+        <form action="/searchbyingredient" method="POST">
+            <input type="text" name="ingredients" placeholder="Enter the Ingredients">
+            <button type="submit"> Search </button>
+        </form>
+    </div>
+    <div class="randomsearch hideforms">
+        <form action="/randomsearch" method="POST">
+            <button type="submit"> Search </button>
+        </form>
+    </div>
+
+    <div class="caloriessearch hideforms">
+        <form action="/calories" method="POST">
+        <input type="number" name="min" placeholder="min calories">
+        <input type="number" name="max" id="max calories">
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+    <div class="cuisine hideforms">
+        <form action="/cuisine" method="POST">
+        <select name="cuisine">
+            <option value="African">African</option>
+            <option value="American">American</option>
+            <option value="British">British</option>
+            <option value="Cajun">Cajun</option>
+            <option value="Caribbean">Caribbean</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Eastern European">Eastern European</option>
+            <option value="European">European</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Greek">Greek</option>
+            <option value="Indian">Indian</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Korean">Korean</option>
+            <option value="Latin American">Latin American</option>
+            <option value="Mediterranean">Mediterranean</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Middle Eastern">Middle Eastern</option>
+            <option value="Nordic">Nordic</option>
+            <option value="Southern">Southern</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Thai">Thai</option>
+            <option value="Vietnamese">Vietnamese</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+    
+    <div class="diet hideforms">
+        <form action="/diet" method="POST">
+        <select name="diet">
+            <option value="Gluten Free">Gluten Free</option>
+            <option value="Ketogenic">Ketogenic</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+            <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Pescetarian">Pescetarian</option>
+            <option value="Paleo">Paleo</option>
+            <option value="Primal">Primal</option>
+            <option value="Whole30">Whole30</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+
+    <div class="intolerances hideforms">
+        <form action="/intolerances" method="POST">
+        <select name="intolerances">
+            <option value="Dairy">Dairy</option>
+            <option value="Egg">Egg</option>
+            <option value="Gluten">Gluten</option>
+            <option value="Grain">Grain</option>
+            <option value="Peanut">Peanut</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Sesame">Sesame</option>
+            <option value="Shellfish">Shellfish</option>
+            <option value="Soy">Soy</option>
+            <option value="Sulfite">Sulfite</option>
+            <option value="Tree Nut">Tree Nut</option>
+            <option value="Wheat">Wheat</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+
+    <div class="type hideforms">
+        <form action="/type" method="POST">
+        <select name="type">
+            <option value="main course">main course</option>
+            <option value="side dish">side dish</option>
+            <option value="dessert">dessert</option>
+            <option value="appetizer">appetizer</option>
+            <option value="salad">salad</option>
+            <option value="bread">bread</option>
+            <option value="breakfast">breakfast</option>
+            <option value="soup">soup</option>
+            <option value="beverage">beverage</option>
+            <option value="sauce">sauce</option>
+            <option value="marinade">marinade</option>
+            <option value="fingerfood">fingerfood</option>
+            <option value="snack">snack</option>
+            <option value="drink">drink</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+
+    <div class="maxReadyTime hideforms">
+        <form action="/maxReadyTime" method="POST">
+            <input type="number" name="maxReadyTime" placeholder="preparation Time in min">
+            <button type="submit"> Search </button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

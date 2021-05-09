@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+</head>
+<body>
+    
+    <div>
+        <h2><%=recipe.title%></h2>
+        <img src="<%=recipe.image%>" alt="">
+        <p>time required to make this recipe: <%=recipe.time%> minutes</p>
+        <p> servings: <%=recipe.servings%> </p>
+        <p> summary: <%-recipe.summary%> </p>
+        <h3>Ingredients:</h3>
+        <ul>
+        <%recipe.ingredients.forEach(ingredient => { %>
+            <li><%=ingredient%></li>
+        <% })%>
+    </ul>
+    <h3>Instructions:</h3>
+    <section>
+        <%- recipe.instructions %>
+    </section>
+    <section>
+        <h2>Nutrition Data</h2>
+        <p>calories: <%=recipe.calories%></p>
+        <p>carbs: <%=recipe.carbs%></p>
+        <p>fat: <%=recipe.fat%></p>
+        <p>protein: <%=recipe.protein%></p>
+    </section>
+    </div>
+</body>
+</html>

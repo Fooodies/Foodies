@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+
+<body>
+
+    <%if(!dishes.length){%>
+        <h2>no data</h2>
+        <a href="/search"> back to search page</a>
+        <%}else{%>
+    <% dishes.forEach(element=> { %>
+        <div>
+            <h2>
+                <%= element.title %>
+            </h2>
+            <img src="<%= element.image %>" alt="">
+            <form action="/details" method="POST">
+                <input type="hidden" name="Resid" value="<%=element.id%>">
+                <button type="submit"> Show Recipe </button>
+            </form>
+        </div>
+        <% }) %>
+        <form action="<%=url%>" method='POST' id='nextform'>
+            <input type="hidden" name="page" value="<%=page%>">
+            <button onclick="preventDef()">next</button>
+        </form>
+        <%}%>
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script>
+    function preventDef(event){
+        event.preventDefault();
+    }
+</script>
+</html>
