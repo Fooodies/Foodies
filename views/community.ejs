@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%if(!recipeData.length){%>
+        <h2>you don't have data</h2>
+    <%}else{ recipeData.forEach(item=>{%>
+            <section>
+                <h2><%=item.username%></h2>
+                <h2><%=item.recipename%></h2>
+                <h2><%=item.img_url%></h2>
+                <h2><%=item.ingredient%></h2>
+                <h2><%=item.time%></h2>
+                <h2><%=item.serving%></h2>
+                <h2><%=item.instuctions%></h2>
+            </section>
+        <%})%>
+    <%}%>
+    
+</body>
+</html>
