@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Main</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="/">Your Logo</a>
+            </div>
+            <div id="mainListDiv" class="main_list show_list"class="main_list show_list"style="display: block;">
+                <ul class="navlinks">
+                    <li><a href="/search">Search</a></li>
+                    <li><a href="/addrecipe">Add Recipe</a></li>
+                    <li><a href="/community">Community</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger active">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+    <div class="main">
+        <!-- <div class="slide-img"> -->
+        <div class="contener contener1">
+            <img id="img1" src="http://www.simpleimageresizer.com/_uploads/photos/da795436/baked-chicken-wings-asian-style_28.jpg" alt="">
+        </div>
+        <div class="contener contener3">
+            <img id="img2" src="http://www.simpleimageresizer.com/_uploads/photos/da795436/red-velvet-cake-slices-white-plate_1_28.jpg" alt="">
+        </div>
+        <div class="contener contener4">
+            <img id="img3" src="http://www.simpleimageresizer.com/_uploads/photos/da795436/spicy-mixed-seafood-salad-with-thai-food-ingredients_1_28.jpg" alt="">
+        </div>
+        <div class="contener contener5">
+            <img id="img4" src="http://www.simpleimageresizer.com/_uploads/photos/da795436/top-view-fast-food-mix-hamburger-doner-sandwich-chicken-nuggets-rice-vegetable-salad-chicken-sticks-caesar-salad-mushrooms-pizza-chicken-ragout-french-fries-mayo_28.jpg" alt="">
+        </div>
+
+        <div class="contener contener6">
+            <img id="img5" src="http://www.simpleimageresizer.com/_uploads/photos/da795436/side-view-fruit-cake-with-vanilla-cream-chocolate-kiwi-orange-strawberry-pineapple-pastries-table_28.jpg" alt="">
+        </div>
+
+        <div class="contener contener7">
+            <img id="img6" src="http://www.simpleimageresizer.com/_uploads/photos/da795436/homemade-newyork-cheesecake-with-frozen-berries-mint_28.jpg" alt="">
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+</body>
+</html>
