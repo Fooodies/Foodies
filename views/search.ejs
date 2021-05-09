@@ -6,11 +6,224 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+   
+    <style type="text/css">
+    body{
+        background-image: url(https://i.pinimg.com/originals/d3/6d/46/d36d462db827833805497d9ea78a1343.jpg);
+        background-size:cover;
+        background-position: center center  ;
+        background-repeat:no-repeat ;
+        background-attachment:fixed ;
+        /* background-color:red ; */
+    }
+
+
+    #ui{
+        background-color: #333;
+        padding: 30px;
+        margin-top: 280px;
+        border-radius: 10px;
+        opacity: 0.7;
+    }
+    #ui label , h1{
+        color: #fff;
+    }
+    
+    
+    </style>
+
 </head>
 
-<body>
+<body >
 
-    <h1>select the proper category</h1>
+
+ <div class="container">
+
+<div class="row">
+
+<div class="col-lg-3"></div>
+<div class="col-lg-6">
+
+    <div id="ui">
+
+        <h1 class="text-center">Take a look at our Categorys</h1>
+        <br>
+        <select id="mainselect" class="form-select" aria-label="Default select example">
+            <option value="default" >Select type of search</option>
+            <option value="searchbyingredient"> Search by ingredient</option>
+            <option value="randomsearch"> Feeling Lucky! </option>
+            <option value="caloriessearch"> Search by calories </option>
+            <option value="cuisine"> Search by cuisine </option>
+            <option value="diet"> Search by diet </option>
+            <option value="intolerances"> Search by intolerances </option>
+            <option value="type"> Search by type</option>
+            <option value="maxReadyTime"> preparation Time</option>
+          </select>
+     
+           <div class="searchbyingredient hideforms">
+        <form class="form-group" action="/searchbyingredient" method="POST">
+            
+            <br>
+            <label for="">ingredients</label>
+            <input class="form-control" type="text" name="ingredients" placeholder="Enter the Ingredients"> 
+            <button class="btn btn-primary btn-block btn-lg" type="submit"> Search </button>
+        </form>
+    </div>
+         
+    <div class="caloriessearch hideforms">
+        <form action="/calories" method="POST">
+            
+            <div class="row">
+        
+        <div class="col-lg-6"></div>
+        <br>
+        <label for="">min number</label>
+        <input class="form-control" type="number" name="min" placeholder="min calories">
+       
+        <div class="col-lg-6"></div>
+        <br>
+        <label for="">max number</label>
+        
+        <input id="max calories" class="form-control" type="number" name="max" placeholder="maxcalories">
+        <br>
+        <button class="btn btn-primary btn-block btn-lg" type="submit"> Search </button>
+        </div>
+
+       
+       
+        
+        </form>
+    </div> 
+     
+    <div class="randomsearch hideforms">
+        <form action="/randomsearch" method="POST">
+            <button class="btn btn-primary btn-block btn-lg" type="submit"> Search </button>
+        </form>
+    </div>
+
+    <div class="cuisine hideforms">
+        <form action="/cuisine" method="POST">
+
+            <div class="row">
+        <select name="cuisine" class="form-control" >
+            <option value="African">African</option>
+            <option value="American">American</option>
+            <option value="British">British</option>
+            <option value="Cajun">Cajun</option>
+            <option value="Caribbean">Caribbean</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Eastern European">Eastern European</option>
+            <option value="European">European</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Greek">Greek</option>
+            <option value="Indian">Indian</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Korean">Korean</option>
+            <option value="Latin American">Latin American</option>
+            <option value="Mediterranean">Mediterranean</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Middle Eastern">Middle Eastern</option>
+            <option value="Nordic">Nordic</option>
+            <option value="Southern">Southern</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Thai">Thai</option>
+            <option value="Vietnamese">Vietnamese</option>
+        </select>
+        <br>
+        <button class="btn btn-primary btn-block btn-lg" type="submit"> Search </button>
+        </div>
+        </form>
+    </div>
+    
+
+    <div class="diet hideforms">
+        <form action="/diet" method="POST">
+            <div class="row"></div>
+        <select name="diet">
+            <option value="Gluten Free">Gluten Free</option>
+            <option value="Ketogenic">Ketogenic</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+            <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Pescetarian">Pescetarian</option>
+            <option value="Paleo">Paleo</option>
+            <option value="Primal">Primal</option>
+            <option value="Whole30">Whole30</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+    
+    <div class="intolerances hideforms">
+        <form action="/intolerances" method="POST">
+            <div class="row"></div>
+        <select name="intolerances">
+            <option value="Dairy">Dairy</option>
+            <option value="Egg">Egg</option>
+            <option value="Gluten">Gluten</option>
+            <option value="Grain">Grain</option>
+            <option value="Peanut">Peanut</option>
+            <option value="Seafood">Seafood</option>
+            <option value="Sesame">Sesame</option>
+            <option value="Shellfish">Shellfish</option>
+            <option value="Soy">Soy</option>
+            <option value="Sulfite">Sulfite</option>
+            <option value="Tree Nut">Tree Nut</option>
+            <option value="Wheat">Wheat</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+   
+    <div class="type hideforms">
+        <form action="/type" method="POST">
+        <select name="type">
+            <option value="main course">main course</option>
+            <option value="side dish">side dish</option>
+            <option value="dessert">dessert</option>
+            <option value="appetizer">appetizer</option>
+            <option value="salad">salad</option>
+            <option value="bread">bread</option>
+            <option value="breakfast">breakfast</option>
+            <option value="soup">soup</option>
+            <option value="beverage">beverage</option>
+            <option value="sauce">sauce</option>
+            <option value="marinade">marinade</option>
+            <option value="fingerfood">fingerfood</option>
+            <option value="snack">snack</option>
+            <option value="drink">drink</option>
+        </select>
+        <button type="submit"> Search </button>
+        </form>
+    </div>
+    
+    <div class="maxReadyTime hideforms">
+        <form action="/maxReadyTime" method="POST">
+            <input type="number" name="maxReadyTime" placeholder="preparation Time in min">
+            <button type="submit"> Search </button>
+        </form>
+    </div>
+
+    </div>
+</div>
+<div class="col-lg-3"></div>
+
+</div>
+
+
+
+
+ </div>
+
+
+
+
+    <!-- <h1>select the proper category</h1>
 
     <select id="mainselect">
         <option value="default">Select the type of search</option>
@@ -18,13 +231,9 @@
         <option value="randomsearch"> Feeling Lucky! </option>
         <option value="caloriessearch"> Search by calories </option>
         <option value="cuisine"> Search by cuisine </option>
-        <option value="diet"> Search by diet </option>
-        <option value="intolerances"> Search by intolerances </option>
-        <option value="type"> Search by type</option>
-        <option value="maxReadyTime"> preparation Time</option>
-    </select>
+    </select> -->
 
-    <div class="searchbyingredient hideforms">
+    <!-- <div class="searchbyingredient hideforms">
         <form action="/searchbyingredient" method="POST">
             <input type="text" name="ingredients" placeholder="Enter the Ingredients">
             <button type="submit"> Search </button>
@@ -76,74 +285,14 @@
         </form>
     </div>
     
-    <div class="diet hideforms">
-        <form action="/diet" method="POST">
-        <select name="diet">
-            <option value="Gluten Free">Gluten Free</option>
-            <option value="Ketogenic">Ketogenic</option>
-            <option value="Vegetarian">Vegetarian</option>
-            <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
-            <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
-            <option value="Vegan">Vegan</option>
-            <option value="Pescetarian">Pescetarian</option>
-            <option value="Paleo">Paleo</option>
-            <option value="Primal">Primal</option>
-            <option value="Whole30">Whole30</option>
-        </select>
-        <button type="submit"> Search </button>
-        </form>
-    </div>
+ -->
 
-    <div class="intolerances hideforms">
-        <form action="/intolerances" method="POST">
-        <select name="intolerances">
-            <option value="Dairy">Dairy</option>
-            <option value="Egg">Egg</option>
-            <option value="Gluten">Gluten</option>
-            <option value="Grain">Grain</option>
-            <option value="Peanut">Peanut</option>
-            <option value="Seafood">Seafood</option>
-            <option value="Sesame">Sesame</option>
-            <option value="Shellfish">Shellfish</option>
-            <option value="Soy">Soy</option>
-            <option value="Sulfite">Sulfite</option>
-            <option value="Tree Nut">Tree Nut</option>
-            <option value="Wheat">Wheat</option>
-        </select>
-        <button type="submit"> Search </button>
-        </form>
-    </div>
 
-    <div class="type hideforms">
-        <form action="/type" method="POST">
-        <select name="type">
-            <option value="main course">main course</option>
-            <option value="side dish">side dish</option>
-            <option value="dessert">dessert</option>
-            <option value="appetizer">appetizer</option>
-            <option value="salad">salad</option>
-            <option value="bread">bread</option>
-            <option value="breakfast">breakfast</option>
-            <option value="soup">soup</option>
-            <option value="beverage">beverage</option>
-            <option value="sauce">sauce</option>
-            <option value="marinade">marinade</option>
-            <option value="fingerfood">fingerfood</option>
-            <option value="snack">snack</option>
-            <option value="drink">drink</option>
-        </select>
-        <button type="submit"> Search </button>
-        </form>
-    </div>
 
-    <div class="maxReadyTime hideforms">
-        <form action="/maxReadyTime" method="POST">
-            <input type="number" name="maxReadyTime" placeholder="preparation Time in min">
-            <button type="submit"> Search </button>
-        </form>
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
 </body>
 
