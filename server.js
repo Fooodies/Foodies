@@ -39,7 +39,6 @@ server.post('/diet',dietHand)
 server.post('/intolerances',intolerancesHand)
 server.post('/type',typeHand)
 server.post('/maxReadyTime',maxReadyTimeHand)
-server.get('/main', homePage)
 server.get('/aboutus', renderAboutUs)
 // server.post('/nutritionvalue/:id', checkNutretionValue)
 // Superagent Functionality
@@ -47,12 +46,10 @@ server.get('/aboutus', renderAboutUs)
 
 // 1) render the main page, with 10 random recipes
 function mainPage (req,res) {
-    res.render('index')
-}
-
-function homePage (req,res) {
     res.render('main')
 }
+
+
 
 function renderAboutUs (req,res) {
     res.render('aboutus')
