@@ -8,3 +8,5 @@ $('#mainselect').on('change', function () {
     $(`.${selected}`).show();
 })
 
+
+
