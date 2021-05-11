@@ -50,7 +50,7 @@ function mainPage (req,res) {
     res.render('index')
 }
 
-function homePage (req,res) {
+function homePage (req,res){
     res.render('main')
 }
 
