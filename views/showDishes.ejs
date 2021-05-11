@@ -18,8 +18,7 @@
     <main>
 <h1>Search Results</h1>
     <%if(!dishes.length){%>
-        <h2>no data</h2>
-        <a href="/search"> back to search page</a>
+        <h2 class="h2tag">No Data ...</h2>
         <%}else{%>
             <div class="content-wrapper">
     <% dishes.forEach(element=> { %>
@@ -32,7 +31,7 @@
                 <div class="news-card__details-wrapper">
                     <form action="/details" method="POST">
                         <input type="hidden" name="Resid" value="<%=element.id%>">
-                        <button type="submit" class="custom-btn btn-5"> Show Recipe </button>
+                        <button type="submit" class="custom-btn btn-7"> Show Recipe </button>
                     </form>
                 </div>
             </div>
@@ -42,7 +41,7 @@
     </div>
         <form action="<%=url%>" method='POST' id='nextform'>
             <input type="hidden" name="page" value="<%=page%>">
-            <button onclick="preventDef()" class="custom-btn btn-2 bb">next</button>
+            <button onclick="preventDef()" class="custom-btn btn-11 bb">Next</button>
         </form>
         <%}%>
     </main>
