@@ -2,24 +2,25 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 body {
     font-family: 'Lato', sans-serif;
-    color: #FFF;
+
     background: #D3D3D3	;
     -webkit-font-smoothing: antialiased;
 }
-a {
+footer a {
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
-p > a:hover{
+
+footer p > a:hover{
     color: #d9d9d9;
     text-decoration:  underline;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
     margin:  1% 0 1% 0;
 }
 ._12 {
@@ -28,7 +29,7 @@ h6 {
 ._14 {
     font-size: 1.4em;
 }
-ul {
+footer ul {
     padding:0;
     list-style: none;
 }
@@ -129,4 +130,7 @@ footer{
 	display: flex;
 	justify-content:space-between;
 	align-items: center;
+}
+.first {
+    color: #FFF;
 }
