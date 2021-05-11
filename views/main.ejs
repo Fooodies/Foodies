@@ -13,7 +13,7 @@
     
     
     
-    <title> MAIN</title>
+    <title>Foodies!</title>
 </head>
 <body>
   <%- include('./layout/header.ejs')%>
@@ -109,28 +109,43 @@
         </div>
       </div> 
     </section>
+    <section>
+        <h2>Pupular Desserts</h2>
+    <div id="app" class="container">
+      <a target="_blank" href="https://www.youtube.com/watch?v=zHu9rdrAGjk">
+        <card data-image="https://image.freepik.com/free-photo/high-angle-shot-some-blue-purple-vegan-donuts-surrounded-by-flowers-table_181624-34320.jpg">
+          <h1 slot="header">Donut</h1>
+          <p slot="content">“ The only circle of trust you should have is a donut. ”</p>
+        </card></a>
+        <a target="_blank" href="https://www.youtube.com/watch?v=Z55wBdUo_s0">
+        <card data-image="https://image.freepik.com/free-photo/homemade-delicious-raspberry-cake-roll_114579-52474.jpg">
+          <h1 slot="header">Red-velvet</h1>
+          <p slot="content">“ All the world is red-vevlet, so take a piece, but not too much ”</p>
+        </card></a>
+        <a target="_blank" href="https://www.youtube.com/watch?v=Ov4u0ARMWKQ">
+        <card data-image="https://image.freepik.com/free-photo/assortment-pieces-cake_114579-28168.jpg">
+          <h1 slot="header">Cake</h1>
+          <p slot="content">“ Where there is cake, there is hope. And there is always cake ”</p>
+        </card></a>
+        <a target="_blank"  href="https://www.youtube.com/watch?v=nApD25HkbXk">
+        <card data-image="https://image.freepik.com/free-photo/chocolate-ice-cream-dessert_144627-8363.jpg">
+          <h1 slot="header">Ice Cream</h1>
+          <p slot="content">“ You can’t buy happiness but you can buy ice cream. And that’s kind of the same thing ”</p>
+        </card></a>
+      </div>
+      <h3>About Foodies</h3>
+    <p id="par">
+      Foodies is a service website, exist to provide proper recipes for food from all over the world.
+       if you are following a diet and need to cut down on carbs, we got you, if you have intolerances,
+        we got you, if you have only 20 minutes to prepare a proper dish, guess what, we got you, foodies
+         have all of that and much more!
+    </p>
+    </section>
   </main>
-<section>
-    
-<div id="app" class="container">
-    <card data-image="https://image.freepik.com/free-photo/high-angle-shot-some-blue-purple-vegan-donuts-surrounded-by-flowers-table_181624-34320.jpg">
-      <h1 slot="header">Donut</h1>
-      <p slot="content">“ The only circle of trust you should have is a donut. ”</p>
-    </card>
-    <card data-image="https://image.freepik.com/free-photo/homemade-delicious-raspberry-cake-roll_114579-52474.jpg">
-      <h1 slot="header">Red-velvet</h1>
-      <p slot="content">“ All the world is red-vevlet, so take a piece, but not too much ”</p>
-    </card>
-    <card data-image="https://image.freepik.com/free-photo/assortment-pieces-cake_114579-28168.jpg">
-      <h1 slot="header">Cake</h1>
-      <p slot="content">“ Where there is cake, there is hope. And there is always cake ”</p>
-    </card>
-    <card data-image="https://image.freepik.com/free-photo/chocolate-ice-cream-dessert_144627-8363.jpg">
-      <h1 slot="header">Ice Cream</h1>
-      <p slot="content">“ You can’t buy happiness but you can buy ice cream. And that’s kind of the same thing ”</p>
-    </card>
-  </div>
-</section>
+
+  <%- include('./layout/footer.ejs')%>
+
+
 
 
   <!-- partial -->
