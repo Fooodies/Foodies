@@ -264,8 +264,8 @@ function displayCommunity(req,res){
 // 1) for rendering the dishes for all API requests
 function Dish (element) {
     this.id = element.id;
-    this.title = element.title;
-    this.image = element.image;
+    this.title = element.title ? element.title : `Title not available` ;
+    this.image = element.image ? element.image : `https://foodtango.com.au/img/ui/noimage.png`;
 }
 
 // 2) for rendering details about a certain recipe
@@ -292,3 +292,6 @@ function Recipe (data,nutretion) {
 //     this.fat = data.fat;
 //     this.protein = data.protein;
 // }
+
+//
+//

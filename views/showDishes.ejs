@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.8/css/all.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'>
@@ -13,6 +14,8 @@
 </head>
 
 <body>
+    <%- include('./layout/header.ejs')%>
+    <main>
 <h1>Search Results</h1>
     <%if(!dishes.length){%>
         <h2>no data</h2>
@@ -42,6 +45,8 @@
             <button onclick="preventDef()" class="custom-btn btn-2 bb">next</button>
         </form>
         <%}%>
+    </main>
+    <%- include('./layout/footer.ejs')%>
 </body>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <script>
