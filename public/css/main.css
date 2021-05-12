@@ -6,9 +6,10 @@ section {
     background-color: #BCAAA4;
     -webkit-font-smoothing: antialiased;
   }
- section h2{
+.pars{
     position: relative;
     top: 20px;
+    font-family:'Times New Roman', Times, serif;
     color: rgb(161, 115, 115);
     text-shadow: rgb(158, 8, 8);
     text-align: center;
@@ -17,6 +18,7 @@ section {
   }
   section h3{
     margin-bottom: 20px;
+    font-family:'Times New Roman', Times, serif;
     color: rgb(161, 115, 115);
     text-shadow: rgb(158, 8, 8);
     text-align: center;
@@ -27,7 +29,12 @@ section {
     text-align: center;
     font-size: medium;
     font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: rgb(151, 75, 75);
     padding: 20px;
+    line-height: 20px;
+    font-size: medium;
+  
   }
   p {
     line-height: 1.5em;

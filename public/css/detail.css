@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen:400,700');
+
+body {
+  background: #f9f9f9;
+}
+
+#card-container {
+  background: #ededed;
+  box-shadow: 0px 0px 200px #999;
+  font-family: 'Oxygen', sans-serif;
+  width: 40%;
+  height: 550px;
+  margin: 5% auto;
+}
+
+#card-title {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  background: #455560;
+  padding: 15px 20px;
+  color: #fff;
+  border-radius: 2px 2px 0 0;
+}
+
+#details {
+  background: #fff;
+  border-left: solid 1px #ededed;
+  border-right: solid 1px #ededed;
+  font-size: 16px;
+  font-family: 'Oxygen', sans-serif;
+  padding: 15px 20px;
+}
+
+.detail-value {
+  color: #455560;
+}
+
+#card-items {
+    background: #ededed;
+    font-family: 'Oxygen', sans-serif;
+    padding: 20px
+  }
+  
+  .card-item-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  ul.checkmark li:before {
+      color: #455560;
+      content:"\2713\0020";
+      font-weight: 600;
+      margin-left: -10px;
+      margin-right: 10px;
+  }
+  
+  .checkmark li {
+    list-style-type: none;
+  }
+  
+  li {font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
+  
+  #method {
+    background: #ededed;
+    border-left: solid 1px #ededed;
+    border-right: solid 1px #ededed;
+    border-bottom: solid 1px #ededed;
+    padding: 20px;
+  }
+  
+  #method li {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    list-style-position: inside;
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+#recipe-image {
+
+  overflow: hidden;
+  height: 350px;
+  /* background-size: cover; */
+ 
+}
+#recipe-image img{
+ width: 100%;
+}
+
+ol {
+  counter-reset: item;
+}
+
+ol > li {
+  counter-increment: item;
+}
+
+ol > li::before {
+  font-weight: bold;
+  content: counter(item) ".";
+  margin-right: 8px;
+}
+ .recipe-details {
+    display: flex;
+    list-style: none;
+    padding: 1.4em 0 1em;
+    margin: 0;
+    justify-content: space-evenly;
+  }
+
+ .recipe-details .recipe-details-item i {
+    font-size: 30px;
+  }
+ .recipe-details .recipe-details-item .value {
+    color: #ff4f87;
+    margin-left: 0.35em;
+    vertical-align: bottom;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  #data {font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+    background: #ededed;
+    border-left: solid 1px #ededed;
+    border-right: solid 1px #ededed;
+    border-bottom: solid 1px #ededed;
+    padding: 20px;
+  }
+  section h2{font-family: 'Source Sans Pro', sans-serif;
+      font-size: 30px;
+      font-weight: bolder;
+  }
+  #data p {font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    list-style-position: inside;
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
