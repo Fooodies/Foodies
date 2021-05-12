@@ -70,7 +70,7 @@ function handleSearchByIngredient(req,res){
     //  ingredients = req.body.ingredients?req.body.ingredient:ingredients; //change it back to body
     if(req.body.ingredients) ingredients=req.body.ingredients;
     let key = process.env.apiKey;
-    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&query=${ingredients}&offset=${start}`
+    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&query=${ingredients}&offset=${start}&number=9`
     superagent.get(url)
     .then(data=> {
         data.body.results.forEach(element => {
@@ -88,7 +88,7 @@ function randomSearch (req,res) {
     const resultPerPage=10;
     let start=((page-1)*resultPerPage+1);
     let key = process.env.apiKey;
-    let url = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${key}&offset=${start}`;
+    let url = `https://api.spoonacular.com/recipes/random?number=9&apiKey=${key}&offset=${start}`;
     superagent.get(url)
     .then(data=>{
         data.body.recipes.forEach(element => {
@@ -113,7 +113,7 @@ function caloriesSearch (req,res) {
          max=req.body.max;
      }
     let key = process.env.apiKey;
-    let url = `https://api.spoonacular.com/recipes/findByNutrients?apiKey=${key}&minCalories=${min}&maxCalories=${max}&offset=${start}`
+    let url = `https://api.spoonacular.com/recipes/findByNutrients?apiKey=${key}&minCalories=${min}&maxCalories=${max}&offset=${start}&number=9`
     superagent.get(url)
     .then(data => {
         data.body.forEach(element => {
@@ -149,7 +149,7 @@ function cuisineHandler (req,res) {
     let key = process.env.apiKey;
     if( req.body.cuisine) cuisine=req.body.cuisine;
     console.log(start,key,cuisine);
-    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&cuisine=${cuisine}&offset=${start}`
+    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&cuisine=${cuisine}&offset=${start}&number=9`
     superagent.get(url)
     .then(data => {
         data.body.results.forEach(element => {
@@ -168,7 +168,7 @@ function dietHand(req,res){
     let start=((page-1)*resultPerPage+1);
     let key = process.env.apiKey;
     if( req.body.diet) diet=req.body.diet;
-    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&diet=${diet}&offset=${start}`
+    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&diet=${diet}&offset=${start}&number=9`
     superagent.get(url)
     .then(data => {
         data.body.results.forEach(element => {
@@ -192,7 +192,7 @@ function intolerancesHand(req,res){
     let key = process.env.apiKey;
     if( req.body.intolerances) intolerances=req.body.intolerances;
     console.log( intolerances,page)
-    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&intolerances=${intolerances}&offset=${start}`
+    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&intolerances=${intolerances}&offset=${start}&number=9`
     console.log(url);
     superagent.get(url)
     .then(data => {
@@ -212,7 +212,7 @@ function typeHand(req,res){
     let start=((page-1)*resultPerPage+1);
     let key = process.env.apiKey;
     if( req.body.type) type=req.body.type;
-    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&type=${type}&offset=${start}`
+    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&type=${type}&offset=${start}&number=9`
     superagent.get(url)
     .then(data => {
         data.body.results.forEach(element => {
@@ -231,7 +231,7 @@ function maxReadyTimeHand(req,res){
     let start=((page-1)*resultPerPage+1);
     let key = process.env.apiKey;
     if( req.body.maxReadyTime) maxReadyTime=req.body.maxReadyTime;
-    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&maxReadyTime=${maxReadyTime}&offset=${start}`
+    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&maxReadyTime=${maxReadyTime}&offset=${start}&number=9`
     superagent.get(url)
     .then(data => {
         data.body.results.forEach(element => {
@@ -256,6 +256,7 @@ function displayCommunity(req,res){
     let sql=`select * from recipe;`;
     client.query(sql)
     .then((results)=>{
+        console.log(results.rows)
     res.render('community',{recipeData:results.rows});
     })
 }
@@ -293,5 +294,7 @@ function Recipe (data,nutretion) {
 //     this.protein = data.protein;
 // }
 
+//
+//
 //
 //
