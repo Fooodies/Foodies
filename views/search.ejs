@@ -32,16 +32,16 @@
 
                         <h1 class="text-center">Take a look at our Categories</h1>
                         <br>
-                        <select id="mainselect" class="form-select" aria-label="Default select example">
+                        <select required  id="mainselect" class="form-select" aria-label="Default select example">
                             <option value="default">Select type of search</option>
+                            <option value="intolerances"> Search by intolerances </option>
                             <option value="searchbyingredient"> Search by ingredient</option>
-                            <option value="randomsearch"> Feeling Lucky! </option>
                             <option value="caloriessearch"> Search by calories </option>
+                            <option value="maxReadyTime"> preparation Time</option>
                             <option value="cuisine"> Search by cuisine </option>
                             <option value="diet"> Search by diet </option>
-                            <option value="intolerances"> Search by intolerances </option>
                             <option value="type"> Search by type</option>
-                            <option value="maxReadyTime"> preparation Time</option>
+                            <option value="randomsearch"> Feeling Lucky! </option>
                         </select>
 
                         <div class="searchbyingredient hideforms">
@@ -49,7 +49,7 @@
 
                                 <br>
                                 <label for="">ingredients</label>
-                                <input class="form-control" type="text" name="ingredients"
+                                <input required class="form-control" type="text" name="ingredients"
                                     placeholder="Enter the Ingredients">
                                 <div class="div-button">
                                     <button class="btn btn-color btn-block btn-lg" type="submit"> Search </button>
@@ -65,13 +65,13 @@
                                 <!-- <div class="col-lg-6"></div> -->
                                 <br>
                                 <label for="">min number</label>
-                                <input class="form-control" type="number" name="min" placeholder="min calories">
+                                <input required class="form-control" type="number" name="min" placeholder="min calories">
 
                                 <!-- <div class="col-lg-6"></div> -->
                                 <br>
                                 <label for="">max number</label>
 
-                                <input id="max calories" class="form-control" type="number" name="max"
+                                <input required id="max calories" class="form-control" type="number" name="max"
                                     placeholder="maxcalories">
 
                                 <div class="div-button">
@@ -88,7 +88,7 @@
                             <form action="/cuisine" method="POST">
 
                                 <br>
-                                <select size="10" name="cuisine" class="form-select"
+                                <select required size="10" name="cuisine" class="form-select"
                                     aria-label="Default select example">
                                     <option value="African">African</option>
                                     <option value="American">American</option>
@@ -137,7 +137,7 @@
                             <form action="/diet"   method="POST">
                                 <div class="row"></div>
                                 <br>
-                                <select size="8" class="form-select" name="diet">
+                                <select required size="8" class="form-select" name="diet">
                                     <option value="Gluten Free">Gluten Free</option>
                                     <option value="Ketogenic">Ketogenic</option>
                                     <option value="Vegetarian">Vegetarian</option>
@@ -161,7 +161,7 @@
                             <form action="/intolerances" method="POST">
                                 <div class="row"></div>
                                 <br>
-                                <select size="10" class="form-select" name="intolerances">
+                                <select required size="10" class="form-select" name="intolerances">
                                     <option value="Dairy">Dairy</option>
                                     <option value="Egg">Egg</option>
                                     <option value="Gluten">Gluten</option>
@@ -185,7 +185,7 @@
                         <div class="type hideforms">
                             <form action="/type" method="POST">
                                 <br>
-                                <select size="10" class="form-select" name="type">
+                                <select required size="10" class="form-select" name="type">
                                     <option value="main course">main course</option>
                                     <option value="side dish">side dish</option>
                                     <option value="dessert">dessert</option>
@@ -211,7 +211,7 @@
                         <div class="maxReadyTime hideforms">
                             <form action="/maxReadyTime" method="POST">
                                 <br>
-                                <input class="form-control" type="number" name="maxReadyTime"
+                                <input required class="form-control" type="number" name="maxReadyTime"
                                     placeholder="preparation Time in min">
                                 <div class="div-button">
 
