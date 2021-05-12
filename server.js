@@ -253,13 +253,49 @@ res.redirect('/community');
 }
 
 function displayCommunity(req,res){
-    let sql=`select * from recipe;`;
+    let recipeArray = [];
+    let commentsObject = {};
+    let commentsTempArray = [];
+    let sql = `select * from recipe;`
     client.query(sql)
-    .then((results)=>{
-        console.log(results.rows)
-    res.render('community',{recipeData:results.rows});
+    .then(recipes=> {
+        console.log(recipes.rowCount)
+        if(!recipes.rowCount){res.render('community',{recipes:{}})}
+        else{
+            recipes.rows.forEach((recipe,idx) => {
+                let id = recipe.id;
+                recipeArray.push(recipe);
+                let commentsSql = `select comments from commenttable where secid=$1;`
+                let safeValues = [id]
+                client.query(commentsSql,safeValues)
+                .then(commentsa => {
+                    if(!commentsa.rowCount){commentsTempArray[`${idx}`] = []}
+                    else{
+                        console.log(commentsa.rowCount)
+                        commentsa.rows.forEach(commentRow => {
+                            commentsTempArray.push(commentRow.comments)
+                        })
+                        commentsObject[`${idx + 1}`] = commentsTempArray;
+                        commentsTempArray = [];
+                    }
+                    console.log(recipeArray)
+                    console.log(commentsObject)
+                    res.render('community',{recipeData: recipeArray, comments: commentsObject})
+                })
+            })
+
+        }
+
     })
+
+
 }
+// let sql=`select username from recipe;`;
+// client.query(sql)
+// .then((results)=>{
+//     console.log(results.rows) // [ { username: 'sdkjhg' }, { username: 'UJ163033' } ]
+// res.render('community',{recipeData:results.rows});
+// })
 
 // Constructor functions
 // 1) for rendering the dishes for all API requests
