@@ -1,0 +1,63 @@
+body{
+    background-color:  #E8E7E5;
+}
+section {
+    border: solid 2px white;
+    border-top: none;
+    width: 70%;
+    margin: 40px auto;
+    min-height:300px ;
+}
+
+section *{
+    margin-bottom: 15px; 
+    margin-right:15px ;
+}
+
+h2{
+    word-wrap: break-word;
+    margin-left:390px;
+}
+
+#title{
+    font-weight:bolder;
+    font-size:24px ;
+    font-family: sans-serif;
+    float: none;
+    margin-left:15px ;
+}
+
+section figure{
+    float: left;
+    margin-left:15px ;
+}
+
+section figure img{
+    width: 350px;
+    height:200px ;
+    margin-bottom: 0;
+}
+section div{
+    display: flex;
+    justify-content:space-around;
+  
+}
+
+section div h2:first-child{
+    justify-self: flex-start;
+    margin-left: 0;
+}
+
+section div h2:last-child{
+    margin-left: 0;
+}
+section h2:nth-child(4), section h2:nth-child(6){
+    font-weight: bold;
+    font-size:16px ;
+}
+
+section figure figcaption{
+    font-style: italic;
+    font-weight: bold;
+    color: #268F91;
+}
