@@ -5,36 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://anandchowdhary.github.io/ionicons-3-cdn/icons.css" integrity="sha384-+iqgM+tGle5wS+uPwXzIjZS5v6VkqCUV7YQ/e/clzRHAxYbzpUJ+nldylmtBWCP0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="./style.css">
+    
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/detail.css">
 </head>
 <body>
     <%- include('./layout/header.ejs')%>
     <main>
-    <div>
-        <h2><%=recipe.title%></h2>
-        <img src="<%=recipe.image%>" alt="">
-        <p>time required to make this recipe: <%=recipe.time%> minutes</p>
-        <p> servings: <%=recipe.servings%> </p>
-        <p> summary: <%-recipe.summary%> </p>
-        <h3>Ingredients:</h3>
-        <ul>
-        <%recipe.ingredients.forEach(ingredient => { %>
-            <li><%=ingredient%></li>
-        <% })%>
-    </ul>
-    <h3>Instructions:</h3>
-    <section>
-        <%- recipe.instructions %>
-    </section>
-    <section>
-        <h2>Nutrition Data</h2>
-        <p>calories: <%=recipe.calories%></p>
-        <p>carbs: <%=recipe.carbs%></p>
-        <p>fat: <%=recipe.fat%></p>
-        <p>protein: <%=recipe.protein%></p>
-    </section>
-    </div>
+      
+            <div id="card-container">
+                <div id="card-title"><%=recipe.title%></div>
+                 <div id="recipe-image"><img src="<%=recipe.image%>"alt=""></div>
+                 <ul class="recipe-details">
+                    <li class="recipe-details-item time"><i class="ion ion-ios-clock-outline"></i><span class="value"><%=recipe.time%> </span><span class="title">Minutes</span></li>
+                    <li class="recipe-details-item servings"><i class="ion ion-ios-person-outline"></i><span class="value"><%=recipe.servings%> </span><span class="title">Serving</span></li>
+                    <li class="recipe-details-item ingredients"><i class="ion ion-ios-book-outline"></i><span class="value"><%=recipe.ingredients.length%> </span><span class="title">Ingredients</span></li>
+                 </ul>
+            
+        <hr>
+        
+            <div id="card-items">
+                <span class="card-item-title">Ingredients</span><br><br>
+                <ul class="checkmark">
+                    <%recipe.ingredients.forEach(ingredient => { %>
+                         <li><%=ingredient%></li>
+       
+                         <% })%>
+    
+                        </ul>
+
+                        
+                    </div>
+                
+                    <div id="method">
+                        <span class="card-item-title">Instructions:</span><br><br>
+                        <p><%- recipe.instructions %></p>
+                            
+                       
+                    </div>
+                    <section id="data">
+                        <h2>Nutrition Data</h2><br>
+                        <p>calories: <%=recipe.calories%></p>
+                        <p>carbs: <%=recipe.carbs%></p>
+                        <p>fat: <%=recipe.fat%></p>
+                        <p>protein: <%=recipe.protein%></p>
+                    </section>
+                       
+</div>
+
 </main>
-<%- include('./layout/footer.ejs')%>
+
 </body>
 </html>
