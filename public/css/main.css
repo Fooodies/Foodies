@@ -27,7 +27,7 @@ section {
     text-align: center;
     font-size: medium;
     font-weight: bold;
-  
+    padding: 20px;
   }
   p {
     line-height: 1.5em;
