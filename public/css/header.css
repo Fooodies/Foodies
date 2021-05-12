@@ -1,6 +1,9 @@
 body {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  grid-template-rows: 72px minmax( calc(100vh - 142px) , 1fr ) 60px;
+  
 }
 header ul {
 display: flex;
