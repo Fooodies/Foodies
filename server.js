@@ -1,5 +1,7 @@
-// 'use strict';
+/* global addcomment */
+'use strict';
 // Recipe.reciepeArr=[];
+const bodyParser = require("body-parser");
 require('dotenv').config()
 const express = require('express')
 const server = express();
@@ -7,12 +9,15 @@ const pg = require('pg')
 const superagent = require('superagent');
 const methodOverride = require('method-override');
 const client = new pg.Client(process.env.DATABASE_URL)
+// server.use(bodyParser.json());
+server.use(express.json());
 // const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-
+// const gggg = require()
 
 server.set('view engine','ejs')
 server.use(methodOverride('_method'))
 server.use(express.static('./public'))
+server.use(methodOverride('_method'))
 server.use(express.urlencoded({extended:true})); 
 // for storing the data inside the body, instead of the url or the form data
 
@@ -40,6 +45,7 @@ server.post('/intolerances',intolerancesHand)
 server.post('/type',typeHand)
 server.post('/maxReadyTime',maxReadyTimeHand)
 server.get('/aboutus', renderAboutUs)
+server.post('/community/:id', addComments)
 // server.post('/nutritionvalue/:id', checkNutretionValue)
 // Superagent Functionality
 
@@ -259,27 +265,29 @@ function displayCommunity(req,res){
     let sql = `select * from recipe;`
     client.query(sql)
     .then(recipes=> {
-        console.log(recipes.rowCount)
-        if(!recipes.rowCount){res.render('community',{recipes:{}})}
+        if(!recipes.rowCount){res.render('community',{recipeData:recipeArray, comments: {}})}
         else{
-            recipes.rows.forEach((recipe,idx) => {
+            
+            recipes.rows.forEach((recipe, idx) => {
                 let id = recipe.id;
+                // console.log(id)
                 recipeArray.push(recipe);
                 let commentsSql = `select comments from commenttable where secid=$1;`
                 let safeValues = [id]
                 client.query(commentsSql,safeValues)
                 .then(commentsa => {
-                    if(!commentsa.rowCount){commentsTempArray[`${idx}`] = []}
+                    if(!commentsa.rowCount){commentsObject[`${id}`] = []}
                     else{
-                        console.log(commentsa.rowCount)
+                        // console.log(commentsa.rowCount)
                         commentsa.rows.forEach(commentRow => {
                             commentsTempArray.push(commentRow.comments)
                         })
-                        commentsObject[`${idx + 1}`] = commentsTempArray;
+                        commentsObject[`${id}`] = commentsTempArray;
                         commentsTempArray = [];
                     }
-                    console.log(recipeArray)
+                    // console.log(recipeArray)
                     console.log(commentsObject)
+                    if(idx === recipes.rows.length -1)
                     res.render('community',{recipeData: recipeArray, comments: commentsObject})
                 })
             })
@@ -321,16 +329,13 @@ function Recipe (data,nutretion) {
     this.protein=nutretion.protein;
     // Recipe.reciepeArr.push(this);
 }
-
-// 3) for the nutrition value
-// function Nutrition (data) {
-//     this.calories = data.calories;
-//     this.carbs = data.carbs;
-//     this.fat = data.fat;
-//     this.protein = data.protein;
-// }
-
-//
-//
-//
-//
+function addComments (req,res){
+    let comment = req.body.comment;
+    let secid = req.params.id;
+    let sql = `insert into commenttable (comments,secid) values ($1,$2) RETURNING *;`
+    let safeValues = [comment,secid]
+    client.query(sql,safeValues)
+    .then(data=>{
+        res.redirect()
+    })
+}
