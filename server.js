@@ -46,6 +46,7 @@ server.post('/type',typeHand)
 server.post('/maxReadyTime',maxReadyTimeHand)
 server.get('/aboutus', renderAboutUs)
 server.post('/community/:id', addComments)
+
 // server.post('/nutritionvalue/:id', checkNutretionValue)
 // Superagent Functionality
 
@@ -262,6 +263,7 @@ function displayCommunity(req,res){
     let recipeArray = [];
     let commentsObject = {};
     let commentsTempArray = [];
+    // let commentsName=[];
     let sql = `select * from recipe;`
     client.query(sql)
     .then(recipes=> {
@@ -272,7 +274,7 @@ function displayCommunity(req,res){
                 let id = recipe.id;
                 // console.log(id)
                 recipeArray.push(recipe);
-                let commentsSql = `select comments from commenttable where secid=$1;`
+                let commentsSql = `select comments,name from commenttable where secid=$1;`
                 let safeValues = [id]
                 client.query(commentsSql,safeValues)
                 .then(commentsa => {
@@ -280,7 +282,7 @@ function displayCommunity(req,res){
                     else{
                         // console.log(commentsa.rowCount)
                         commentsa.rows.forEach(commentRow => {
-                            commentsTempArray.push(commentRow.comments)
+                            commentsTempArray.push(commentRow.name,commentRow.comments)
                         })
                         commentsObject[`${id}`] = commentsTempArray;
                         commentsTempArray = [];
@@ -330,10 +332,11 @@ function Recipe (data,nutretion) {
     // Recipe.reciepeArr.push(this);
 }
 function addComments (req,res){
+    let name= req.body.name;
     let comment = req.body.comment;
     let secid = req.params.id;
-    let sql = `insert into commenttable (comments,secid) values ($1,$2) RETURNING *;`
-    let safeValues = [comment,secid]
+    let sql = `insert into commenttable (name,comments,secid) values ($1,$2,$3) RETURNING *;`;
+    let safeValues = [name,comment,secid]
     client.query(sql,safeValues)
     .then(data=>{
         res.redirect()

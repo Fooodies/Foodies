@@ -17,7 +17,6 @@
                 <h2>you don't have data</h2>
                 <%}else{ console.log(comments); recipeData.forEach(item=>{%>
                     <section>
-                        <!-- <h2><%=item.username%></h2> -->
                         <h2 id='title'>
                             <%=item.recipename%>
                         </h2>
@@ -30,7 +29,7 @@
                         <div>
                             <h2> Serving: <%=item.serving%>
                             </h2>
-                            <h2> Preperaction Time: <%=item.time%> min </h2>
+                            <h2> Preperation Time: <%=item.time%> min </h2>
                         </div>
                         <h2>Ingredients</h2>
                         <h2>
@@ -40,19 +39,25 @@
                         <h2>
                             <%=item.instuctions%>
                         </h2>
-                        <button id="<%=item.id%>">Show comments</button>
-                        <div id="commentsSection<%=item.id%>"  style="display: none;">
-                            <div id="allComments<%=item.id%>">
-                                <%if(comments[`${item.id}`]){ comments[`${item.id}`].forEach(comment=>{ %>
-                                    <div>
-                                        <%=comment%>
+                        <button id="<%=item.id%>" class='viewbtn'>view comments</button>
+                        <div id="commentsSection<%=item.id%>"  style="display: none;" class='comDiv'>
+                            <div id="allComments<%=item.id%>" >
+                                <%if(comments[`${item.id}`]){for (let i=0; i< comments[`${item.id}`].length; i=i+2){%>
+                                    <div class='viewDiv'>
+                                        <h2>
+                                            <%= comments[`${item.id}`][i] %> 
+                                        </h2>
+                                        <h3>
+                                            <%= comments[`${item.id}`][i+1]%>
+                                        </h3>
                                     </div>
-                                    <% })} %>
+                                    <% } } %>
                             </div>
                             <form action="/community/<%=item.id%>?_method=put" method="POST">
+                                <input type="text" name="addname" id="addedname<%=item.id%>" placeholder="name">
                                 <input type="text" name="ccc" id="addedComment<%=item.id%>"
-                                    placeholder="Add your comment">
-                                <button class="addComment" id="addComment<%=item.id%>">Comment</button>
+                                    placeholder="Add a comment">
+                                <button class="addComment" id="addComment<%=item.id%>">Post</button>
                             </form>
                         </div>
                     </section>
