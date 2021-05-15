@@ -1,5 +1,6 @@
 body{
     background-color:  #E8E7E5;
+    box-sizing: border-box;
 }
 section {
     border: solid 2px white;
@@ -61,3 +62,51 @@ section figure figcaption{
     font-weight: bold;
     color: #268F91;
 }
+
+.viewbtn{
+    margin-left: 390px;
+    display: block;
+    width:530px;
+    padding: 10px 0px ;
+    border-radius:20px ;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.viewbtn:hover{
+    background-color: #E8E7E5;
+}
+
+.comDiv{
+    margin-left: 15px;
+    display: block;
+}
+.comDiv form, .comDiv div{
+display: block;
+text-align: left;
+}
+
+.viewDiv{
+background-color: #2198ad;
+width:60%;
+margin: 0 auto;
+margin-top: 30px;
+border-radius:5px ;
+border-top-left-radius:0px ;
+}
+
+.viewDiv h2{
+    text-align: left;
+   padding:7px 10px ;
+   margin-bottom: 0;
+   font-weight: bold;
+}
+
+.viewDiv h3{
+    padding: 0 10px;
+    padding-bottom: 10px;
+}
+
+/* #firstdiv{
+    display: none;
+} */
