@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Oxygen:400,700');
 
-body {
-  background: #f9f9f9;
-}
 
 #card-container {
   background: #ededed;
   box-shadow: 0px 0px 200px #999;
   font-family: 'Oxygen', sans-serif;
   width: 40%;
-  height: 550px;
+  /* height: 550px; */
   margin: 5% auto;
 }
 
@@ -84,7 +81,6 @@ body {
 
   overflow: hidden;
   height: 350px;
-  /* background-size: cover; */
  
 }
 #recipe-image img{
@@ -140,4 +136,8 @@ ol > li::before {
     list-style-position: inside;
     margin-bottom: 10px;
     list-style-type: none;
+  }
+
+  body {
+    background: #f9f9f9;
   }
