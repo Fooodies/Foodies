@@ -14,10 +14,11 @@
     display: inline-block;
     height: 12rem;
     overflow: hidden;
-    border-radius: 0.5rem;
+    border-radius:5px;
     /* flex: 1; */
     width: 290px;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+    /* box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5); */
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -webkit-transform: translate3d(0, 0, 0);
@@ -290,7 +291,7 @@
       
       }
       main {
-        background-color: rgb(252, 241, 222);
+        background-color:#f9f9f9;
       }
       h1{
         text-align: center;
