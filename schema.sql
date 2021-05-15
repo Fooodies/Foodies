@@ -5,7 +5,7 @@ create table if not exists recipe (
     username VARCHAR(255),
     recipename VARCHAR(255),
     img_url VARCHAR(1000),
-    ingredient VARCHAR(255),
+    ingredient  text,
     time  VARCHAR(255),
     serving VARCHAR(255),
     instuctions text
