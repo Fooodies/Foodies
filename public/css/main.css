@@ -220,7 +220,6 @@ section {
   }
   .slideshow .slide .image {
 	width: 100%;
-	width: 100%;
 	object-fit: cover;
 	height: 100%;
   }
@@ -327,4 +326,8 @@ section {
 	height: 26px;
 	fill: #fff;
 	transition: left 0.2s ease;
+  }
+
+  .slide-content,.image{
+    height: 100%;
   }
