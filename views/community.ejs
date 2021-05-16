@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="img/logo2.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,9 +55,10 @@
                                     <% } } %>
                             </div>
                             <form action="/community/<%=item.id%>?_method=put" method="POST">
-                                <input type="text" name="addname" id="addedname<%=item.id%>" placeholder="name">
                                 <input type="text" name="ccc" id="addedComment<%=item.id%>"
-                                    placeholder="Add a comment">
+                                placeholder="Add a comment">
+                                <input type="text" name="addname" id="addedname<%=item.id%>" placeholder="Your name">
+                              
                                 <button class="addComment" id="addComment<%=item.id%>">Post</button>
                             </form>
                         </div>
