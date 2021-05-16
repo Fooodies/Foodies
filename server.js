@@ -8,10 +8,10 @@ const server = express();
 const pg = require('pg')
 const superagent = require('superagent');
 const methodOverride = require('method-override');
-const client = new pg.Client(process.env.DATABASE_URL)
+// const client = new pg.Client(process.env.DATABASE_URL)
 // server.use(bodyParser.json());
 server.use(express.json());
-// const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 // const gggg = require()
 
 server.set('view engine','ejs')
