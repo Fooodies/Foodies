@@ -7,6 +7,12 @@ body {
 footer {
     background: black;
     height: 60px;
+    
+}
+.fixed-footer{
+    /* position: fixed; */
+    top: 0;
+  width: 100%;
 }
 footer a {
     text-decoration: none;
