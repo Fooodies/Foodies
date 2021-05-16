@@ -2,7 +2,7 @@ body {
   display: grid;
   grid-template-rows: 72px minmax( calc(100vh - 132px) , 1fr ) 60px;
   
-}
+}z
 header ul {
 display: flex;
 justify-content:space-between;
