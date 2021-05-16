@@ -47,7 +47,8 @@ h1 {
     opacity: 1;
 }
 .btn-color:hover{
-background-color:#1c9787;
+/* background-color:#1c9787; */
+background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
 transition-timing-function:ease-in;
 border:groove 1px black;
 color:cornsilk;

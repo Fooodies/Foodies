@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="img/logo2.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,20 +23,19 @@
                         <h1 class="text-center">Add your recipe</h1>
                         <form action="/community" class="form-group" method="POST">
                         <br>
-                        <input type="text" name="username" class="form-control" placeholder="Please Insert your Name">
+                        <input type="text" name="username" class="form-control" placeholder="Please Insert your Name" required>
                         <br>
-                        <input type="text" name="recipename" class="form-control" placeholder="Please Insert Recipe Name">
+                        <input type="text" name="recipename" class="form-control" placeholder="Please Insert Recipe Name" required>
                         <br>
-                        <input type="text" name="img_url" class="form-control"  placeholder="Image URL">
+                        <input type="text" name="img_url" class="form-control"  placeholder="Image URL" required >
                         <br>
-                        <!-- <input type="text" name='ingredient' class="form-control"  placeholder="Ingredients"> -->
-                        <textarea name="ingredient" cols="30" rows="4" class="form-control" placeholder="Ingredients"></textarea>
+                        <textarea name="ingredient" cols="30" rows="4" class="form-control" placeholder="Ingredients" required></textarea>
                         <br>
-                        <input type="text" name='time' class="form-control" placeholder="Time Required to Make this Recipe">
+                        <input type="number" name='time' class="form-control" placeholder="Time Required to Make this Recipe" required>
                         <br>
-                        <input type="number" name='serving' class="form-control" placeholder="Servings">
+                        <input type="number" name='serving' class="form-control" placeholder="Servings" required>
                         <br>
-                        <textarea name="instuctions" cols="30" rows="4" class="form-control" placeholder="Instructions"></textarea>
+                        <textarea name="instuctions" cols="30" rows="4" class="form-control" placeholder="Instructions" required></textarea>
 
                         <div class="div-button" >
                         <button class="btn btn-color btn-block btn-lg"> Add Recipe</button>
