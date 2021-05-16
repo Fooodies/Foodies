@@ -1,8 +1,22 @@
-body {
+/* body {
   display: grid;
   grid-template-rows: 72px minmax( calc(100vh - 132px) , 1fr ) 60px;
   
+} */
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+footer{
+  margin-top: auto;
+}
+header{
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
 header ul {
 display: flex;
 justify-content:space-between;
