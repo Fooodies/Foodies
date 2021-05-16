@@ -1,6 +1,5 @@
 /* global addcomment */
 'use strict';
-// Recipe.reciepeArr=[];
 const bodyParser = require("body-parser");
 require('dotenv').config()
 const express = require('express')
@@ -8,11 +7,10 @@ const server = express();
 const pg = require('pg')
 const superagent = require('superagent');
 const methodOverride = require('method-override');
-const client = new pg.Client(process.env.DATABASE_URL)
-// server.use(bodyParser.json());
+// const client = new pg.Client(process.env.DATABASE_URL)
 server.use(express.json());
-// const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-// const gggg = require()
+const client = new pg.Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+
 
 server.set('view engine','ejs')
 server.use(methodOverride('_method'))
