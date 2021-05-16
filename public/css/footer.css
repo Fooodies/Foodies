@@ -11,12 +11,10 @@ footer {
 footer a {
     text-decoration: none;
     color: rgb(0, 0, 0);
+    font-weight: normal;
 }
 
-footer p > a:hover{
-    color: #d9d9d9;
-    text-decoration:  underline;
-}
+
 footer h1,
 footer h2,
 footer h3,
@@ -133,6 +131,12 @@ footer{
 	justify-content:space-between;
 	align-items: center;
 }
-.first {
+
+#first {
     color: #FFF;
+}
+
+footer #first > a:hover{
+    color: #e20d2a;
+    text-decoration:none;
 }

@@ -288,7 +288,7 @@ function displayCommunity(req,res){
                         commentsTempArray = [];
                     }
                     // console.log(recipeArray)
-                    console.log(commentsObject)
+                    // console.log(commentsObject)
                     if(idx === recipes.rows.length -1)
                     res.render('community',{recipeData: recipeArray, comments: commentsObject})
                 })

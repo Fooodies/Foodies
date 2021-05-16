@@ -4,7 +4,7 @@ create table if not exists recipe (
     id SERIAL PRIMARY KEY,
     username VARCHAR(255),
     recipename VARCHAR(255),
-    img_url VARCHAR(1000),
+    img_url text,
     ingredient text,
     time  VARCHAR(255),
     serving VARCHAR(255),
