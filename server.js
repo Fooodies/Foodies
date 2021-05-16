@@ -44,6 +44,7 @@ server.post('/type',typeHand)
 server.post('/maxReadyTime',maxReadyTimeHand)
 server.get('/aboutus', renderAboutUs)
 server.post('/community/:id', addComments)
+server.get('*', handleNotFound)
 
 // server.post('/nutritionvalue/:id', checkNutretionValue)
 // Superagent Functionality
@@ -63,6 +64,11 @@ function renderAboutUs (req,res) {
 // handle the searches page itself
 function handleSearch (req,res) {
     res.render('search')
+}
+
+// handle not found page
+function handleNotFound (req,res) {
+    res.render('notfound')
 }
 
 // 2) handle search by ingredients
