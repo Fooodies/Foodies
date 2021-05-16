@@ -14,6 +14,8 @@ function slideshowSwitch(slideshow,index,auto){
   var newSlideElements=newSlide.find('.caption > *');
   if(newSlide.is(activeSlide))return;
 
+
+  
   newSlide.addClass('is-new');
   var timeout=slideshow.data('timeout');
   clearTimeout(timeout);

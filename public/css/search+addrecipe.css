@@ -11,7 +11,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    min-height:86vh;
+    min-height:100vh;
     width: 100%;
 }
 
