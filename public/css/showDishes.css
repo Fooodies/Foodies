@@ -252,16 +252,16 @@
       /* 11 */
       .btn-11 {
         border: none;
-        /* background: #89d8d3; */
-          /* background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%); */
-          /* background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%); */
-          background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
-          color: #fff;
+          background-image: linear-gradient(315deg, #5bd8d0 0%, #0c917ae5 74%);
+          color:white;
+          font-family:Verdana, Geneva, Tahoma, sans-serif;
+          font-size: 16px;
           overflow: hidden;
+          font-weight: 600;
       }
       .btn-11:hover {
           text-decoration: none;
-          color: #fff;
+          /* color: #fff; */
       }
       .btn-11:before {
           position: absolute;
@@ -275,7 +275,8 @@
           animation: shiny-btn1 3s ease-in-out infinite;
       }
       .btn-11:hover{
-        opacity: .7;
+        opacity: .95;
+        border:groove 1px black;
       }
       .btn-11:active{
         box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
@@ -283,7 +284,6 @@
           inset -4px -4px 6px 0 rgba(255,255,255,.2),
           inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
       }
-      
       
       @-webkit-keyframes shiny-btn1 {
           0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
