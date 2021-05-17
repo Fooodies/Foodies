@@ -16,7 +16,7 @@ main {
 }
 
 
-input[type=text],textarea[ name=instuctions], input[type=number], textarea[ name=ingredients]{
+input[type=text],textarea[ name=instuctions], input[type=number], textarea[ name=ingredient]{
 border:groove 1px black;
 }
 #ui {

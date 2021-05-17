@@ -12,6 +12,7 @@ body{
     position: fixed;
     z-index: 999;
     width: 100%;
+    box-shadow: 0 5px 5px rgba(101, 113, 133, 0.3);
   }
   footer{
     margin-top: auto;
