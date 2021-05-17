@@ -9,39 +9,49 @@
     <title>Community</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/community.css">
+    <style>
+        header ul li:nth-child(5)>a{
+          color: #f0094a;
+        }
+      </style>
 </head>
 
 <body>
     <%- include('./layout/header.ejs')%>
-        <main>
+        <main style="margin:80px">
             <%if(!recipeData.length){%>
-                <h2>you don't have data</h2>
+                <h2 style="margin:100px">you don't have data</h2>
                 <%}else{ console.log(comments); recipeData.forEach(item=>{%>
                     <section>
-                        <h2 id='title'>
-                            <%=item.recipename%>
-                        </h2>
-                        <figure>
-                            <img src="<%=item.img_url%>" alt="">
-                            <figcaption>
-                                <%=item.username%>
-                            </figcaption>
-                        </figure>
-                        <div>
-                            <h2> Serving: <%=item.serving%>
+                        <article>
+                            <h2 id='title'>
+                                <%=item.recipename%>
                             </h2>
-                            <h2> Preperation Time: <%=item.time%> min </h2>
-                        </div>
-                        <h2>Ingredients</h2>
-                        <h2>
-                            <%=item.ingredient%>
-                        </h2>
-                        <h2> Instructions</h2>
-                        <h2>
-                            <%=item.instuctions%>
-                        </h2>
-                        <button id="<%=item.id%>" class='viewbtn'>view comments</button>
+                            <h3>
+                                <%=item.username%>
+                            </h3>
+                            <figure>
+                                <img src="<%=item.img_url%>" alt="">
+                                <button id="<%=item.id%>" class='viewbtn'>view comments</button>
+                            </figure>
+                           
+                            <div>
+                                <h2> Serving: <%=item.serving%>
+                                </h2>
+                                <h2> Preperation Time: <%=item.time%> min </h2>
+                            </div>
+                            <h2>Ingredients</h2>
+                            <h2>
+                                <%=item.ingredient%>
+                            </h2>
+                            <h2> Instructions</h2>
+                            <h2>
+                                <%=item.instuctions%>
+                            </h2>
+                        </article>
+                      
                         <div id="commentsSection<%=item.id%>"  style="display: none;" class='comDiv'>
+                            <h2>Comments</h2>
                             <div id="allComments<%=item.id%>" >
                                 <%if(comments[`${item.id}`]){for (let i=0; i< comments[`${item.id}`].length; i=i+2){%>
                                     <div class='viewDiv'>
@@ -55,11 +65,16 @@
                                     <% } } %>
                             </div>
                             <form action="/community/<%=item.id%>?_method=put" method="POST">
-                                <input type="text" name="ccc" id="addedComment<%=item.id%>"
-                                placeholder="Add a comment">
-                                <input type="text" name="addname" id="addedname<%=item.id%>" placeholder="Your name">
+                                <fieldset>
+                                    <legend>Comment </legend>
+                                    <span>Add your Name</span> <br><br>
+                                    <input type="text" name="addname" id="addedname<%=item.id%>" required>
+                                    <span>Add your Comment</span> <br><br>
+                                    <input type="text" name="ccc" id="addedComment<%=item.id%>"
+                                    required>
+                                    <button class="btn-11" id="addComment<%=item.id%>">Post</button>
+                                </fieldset>
                               
-                                <button class="addComment" id="addComment<%=item.id%>">Post</button>
                             </form>
                         </div>
                     </section>

@@ -31,9 +31,10 @@ section {
   #par{
     text-align: center;
     font-size: medium;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-family:Georgia, 'Times New Roman', Times, serif;
-    color:black;
+    color:#37474F;
+    font-weight:700;
     padding: 0px 150px;
     line-height: 20px;
     font-size: medium;
