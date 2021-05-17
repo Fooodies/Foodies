@@ -1,14 +1,16 @@
 body{
-    background-color:  #E8E7E5;
+    background-color:  #f9f9f9;
     box-sizing: border-box;
 }
 /* #E8E7E5 */
 section {
-    border: solid 2px white;
+    border: solid 2px #0c3436;
     border-top: none;
     width: 70%;
-    margin: 40px auto;
-    min-height:300px ;
+    margin: 20px auto;
+    min-height:500px ;
+    display: flex;
+    flex-direction: column;
 }
 
 section *{
@@ -27,6 +29,7 @@ h2{
     font-family: sans-serif;
     float: none;
     margin-left:15px ;
+    margin-bottom: 0;
 }
 
 section figure{
@@ -37,12 +40,11 @@ section figure{
 section figure img{
     width: 350px;
     height:200px ;
-    margin-bottom: 0;
+    margin-bottom:20px;
 }
 section div{
     display: flex;
     justify-content:space-around;
-  
 }
 
 section div h2:first-child{
@@ -53,30 +55,47 @@ section div h2:first-child{
 section div h2:last-child{
     margin-left: 0;
 }
-section h2:nth-child(4), section h2:nth-child(6){
+article h2:nth-child(5),article h2:nth-child(7){
     font-weight: bold;
     font-size:16px ;
 }
 
-section figure figcaption{
+section article{
+    max-height:500px;
+    overflow: hidden;
+}
+section article h3{
     font-style: italic;
     font-weight: bold;
     color: #268F91;
+    margin-left:15px;
+    margin-top:2px ;
 }
 
-.viewbtn{
-    margin-left: 390px;
-    background-image: linear-gradient(315deg, #3cadafc4 40%, #29e4dbc4 60%);
+.viewbtn,form button{
+    
+    background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+    background-color:#03c8a8 ;
+    color:white;
+    border-radius:5px;
+    border: none;
+    transition:0.3s;
     display: block;
-    width:530px;
     padding: 10px 0px ;
-    border-radius:20px ;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 150px;
+    height: 45px;
 }
 
-.viewbtn:hover{
-    background-color: #E8E7E5;
+.viewbtn:hover,form button:hover{
+    background:#3dddd5ab;
+    transition-timing-function:ease-in;
+    border:groove 1px black;
+    color:#0c3436;
+    transition-duration:.5s;
+
 }
 
 .comDiv{
@@ -89,14 +108,17 @@ text-align: left;
 }
 
 .viewDiv{
-background-color:rgb(239, 239, 239) ;
-width:60%;
-margin: 0 auto;
+background-color:rgb(239, 239, 239);
+width:66%;
+margin-left:15px;
 margin-top: 30px;
 border-radius:7px ;
 border-top-left-radius:0px ;
-/* padding: 10px 0; */
 min-height:91px ;
+}
+.comDiv h2{
+font-weight: 600;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .viewDiv h2{
@@ -113,15 +135,22 @@ min-height:91px ;
 
 form{
     width: 79%;
-    margin-left: auto;
+    margin-left:15PX;
 }
-form input:first-child{
-    width:100%;
+
+form input{
+    width:80%;
     padding: 12px 0;
     display: block;
     background-color: #E8E7E5;
-    border: solid rgba(247, 245, 245, 0.973) 2px ;
+    border: solid #034a4b 2px ;
+    padding:15px ;
     
+}
+
+label[for=addname],label[for=ccc]{
+margin-bottom:30px;
+/* padding:15px; */
 }
 
 form input::placeholder{
@@ -129,19 +158,3 @@ form input::placeholder{
     color: rgb(71, 69, 69);
 }
 
-form input:nth-child(2) {
-padding:12px 30px;
-width:38%;
-background-color: #E8E7E5;
-border: solid rgba(247, 245, 245, 0.973) 2px ;
-margin-right:220px ;
-}
-
-
-form button:last-child {
-    padding:10px 40px;
-    width:20%;
-    background-image: linear-gradient(315deg, #3cadafc4 40%, #29e4dbc4 60%);
-    border-radius:20px ;
-    margin-right:0px ;
-    }
