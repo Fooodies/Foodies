@@ -141,6 +141,7 @@ function showDetails (req,res) {
     let url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${key}`
     superagent.get(url)
     .then(data => {
+        console.log(data.body.extendedIngredients)
         let url2=`https://api.spoonacular.com/recipes/${id}/nutritionWidget.json?apiKey=${key}`;
         superagent.get(url2)
         .then((nutretion)=>{
@@ -324,7 +325,7 @@ function Recipe (data,nutretion) {
     this.id = data.id;
     this.title = data.title ? data.title : `Title not available`;
     this.image = data.image ? data.image : `https://foodtango.com.au/img/ui/noimage.png`;
-    this.ingredients = data.extendedIngredients ? data.extendedIngredients.map(value => value.originalString) : `ingredients are not available for now`;
+    this.ingredients = data.extendedIngredients ? data.extendedIngredients.map(value => value.original) : `ingredients are not available for now`;
     this.time = data.readyInMinutes ? data.readyInMinutes : `Preparation time not available`;
     this.instructions = data.instructions ? data.instructions : `Sorry, but the instructions for this dish are not available`;
     this.servings = data.servings;
