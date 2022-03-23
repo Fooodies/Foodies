@@ -90,6 +90,7 @@ section article h3{
 }
 
 .viewbtn:hover,form button:hover{
+    cursor: pointer;
     background:#3dddd5ab;
     transition-timing-function:ease-in;
     border:groove 1px black;

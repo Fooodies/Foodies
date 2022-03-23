@@ -20,7 +20,7 @@
     <%- include('./layout/header.ejs')%>
         <main style="margin:80px">
             <%if(!recipeData.length){%>
-                <h2 style="margin:100px">you don't have data</h2>
+                <h2 style="margin:100px">There is no recipes yet</h2>
                 <%}else{ console.log(comments); recipeData.forEach(item=>{%>
                     <section>
                         <article>
@@ -31,7 +31,7 @@
                                 <%=item.username%>
                             </h3>
                             <figure>
-                                <img src="<%=item.img_url%>" alt="">
+                                <img src="<%=item.img_url%>" alt="" onerror="this.onerror=null; this.src='image/notFound.png'">
                                 <button id="<%=item.id%>" class='viewbtn'>view comments</button>
                             </figure>
                            
